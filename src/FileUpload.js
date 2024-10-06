@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
 function FileUpload() {
+  console.log("FileUpload component is rendering");  // Log pour déboguer
+
   const [file, setFile] = useState(null);
 
   const handleFileChange = (e) => {
@@ -18,7 +20,7 @@ function FileUpload() {
     formData.append('file', file);
 
     // Soumission vers le backend
-    const response = await fetch('http://localhost:5000/upload', {
+    const response = await fetch('http://localhost:5001/upload', {
       method: 'POST',
       body: formData
     });

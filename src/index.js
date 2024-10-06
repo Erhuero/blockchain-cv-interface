@@ -1,41 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 
-function FileUpload() {
-  const [file, setFile] = useState(null);
+// Sélectionne l'élément avec l'ID 'root' et monte l'application React dedans
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
 
-  const handleFileChange = (e) => {
-    setFile(e.target.files[0]);
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!file) {
-      alert("Please upload a file first!");
-      return;
-    }
-
-    const formData = new FormData();
-    formData.append('file', file);
-
-    // Soumission vers le backend
-    const response = await fetch('http://localhost:5000/upload', {
-      method: 'POST',
-      body: formData
-    });
-
-    const result = await response.json();
-    alert(result.message);
-  };
-
-  return (
-    <div>
-      <h2>Upload a PDF Document</h2>
-      <form onSubmit={handleSubmit}>
-        <input type="file" accept=".pdf" onChange={handleFileChange} />
-        <button type="submit">Submit</button>
-      </form>
-    </div>
-  );
-}
-
-export default FileUpload;
+reportWebVitals();
