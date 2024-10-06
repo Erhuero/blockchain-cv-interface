@@ -4,20 +4,29 @@ import './FormPage.css';
 
 
 // Utility function to generate a random hash code
-const generateRandomHash = () => {
-    return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+const getUserID = () => {
+    return "34A8-8F9D-2B3A-4D7A-5CE1";
   };
+
+const getUserName = () => {
+    return "Nelly Pringent";
+};
 
 function FormPage() {
   const [id1, setId1] = useState('');
   const [id2, setId2] = useState('');
-  const [hashCode, setHashCode] = useState('');
+  const [userID, setUserID] = useState('');
+  const [userName, setUserName] = useState('');
   const [files, setFiles] = useState([]);
   const [uploadProgress, setUploadProgress] = useState({});
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
-    setHashCode(generateRandomHash());
+    setUserID(getUserID());
+  }, []);
+
+  useEffect(() => {
+    setUserName(getUserName());
   }, []);
 
   const handleFilesAdded = (newFiles) => {
@@ -76,13 +85,13 @@ function FormPage() {
             <li>ID 1: {id1}</li>
             <li>ID 2: {id2}</li>
           </ul>
-          <p>Hash: {hashCode}</p>
+          <p>Hash: {userID}</p>
           <p>A signing request has been sent by email to the institute.</p>
         </div>
       ) : (
         <>
-          <h1>Welcome Nelly Pringent</h1>
-          <h3>Your ID: {hashCode}</h3>
+          <h1>Welcome {userName}</h1>
+          <h3>Your ID : {userID}</h3>
           
           <form onSubmit={handleSubmit}>
           <h2>Issuing Institute Identifier</h2>
