@@ -10,20 +10,20 @@
   }
   
   .FormPage h1 {
-    font-size: 2.5em; /* Increase font size */
-    color: #333;
+    font-size: 2.5em;
+    color: #ff4d00;
   }
   
   .FormPage h3 {
-    color: grey; /* Change color to grey */
-    text-align: left; /* Align to the left */
-    margin-left: 10%; /* Add some left margin for better alignment */
-    margin-bottom: 50px; /* Add space after */
+    color: grey;
+    text-align: left;
+    margin-left: 10%;
+    margin-bottom: 50px;
     margin-left: 0;
   }
   
   .FormPage h2 {
-    color: #333;
+    color: #ff4d00;
   }
   
   .FormPage form {
@@ -34,25 +34,26 @@
     display: block;
     margin: 10px auto;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #ff4d00;
     border-radius: 5px;
     width: 80%;
     max-width: 300px;
   }
   
   .FormPage .submit-button {
-    background-color: #28a745;
+    background-color: #ff4d00;
     color: white;
     border: none;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.3s;
     font-size: 2em;
   }
   
   .FormPage .submit-button:hover {
-    background-color: #218838;
+    background-color: #c0f8ff;
+    color: #ff4d00;
   }
   
   .success-message {
@@ -60,7 +61,7 @@
   }
   
   .success-message h1 {
-    color: #28a745;
+    color: #ff4d00;
   }
   
   .success-message p, .success-message ul {

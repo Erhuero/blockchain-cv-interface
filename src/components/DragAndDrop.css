@@ -2,38 +2,45 @@
     text-align: center;
     font-family: 'Ubuntu', sans-serif;
   }
+  
   .dropzone {
-    border: 2px dashed #007bff;
+    border: 2px dashed #ff4d00;
     border-radius: 10px;
-    background-color: #f4f4f9;
+    background-color: #c0f8ff;
     padding: 20px;
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s;
     margin-bottom: 20px;
   }
+  
   .dropzone p {
     margin: 0;
     color: #333;
   }
+  
   .dropzone:hover {
-    background-color: #e0e0e0;
+    background-color: #ff4d00;
+    color: #c0f8ff;
   }
+  
   .file-list {
     margin-top: 20px;
   }
+  
   .file-item {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 10px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #ff4d00;
     border-radius: 5px;
     background-color: #fff;
   }
+  
   .delete-button {
-    background-color: red !important;
+    background-color: #ff4d00 !important;
     border: none;
     color: white;
     cursor: pointer;

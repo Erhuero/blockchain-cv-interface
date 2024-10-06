@@ -82,7 +82,7 @@ function FileUpload() {
       <h2>Upload PDF of your Certificate</h2>
       <DragAndDrop onFilesAdded={handleFilesAdded} uploadProgress={uploadProgress} />
       <form onSubmit={handleSubmit}>
-        <button type="submit">Submit</button>
+        <button type="submit" className="hidden">Submit</button>
       </form>
     </div>
   );
