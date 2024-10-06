@@ -1,25 +1,30 @@
 import React, { useState } from 'react';
 
 function FileUpload() {
-  console.log("FileUpload component is rendering");  // Log pour déboguer
-
-  const [file, setFile] = useState(null);
+  const [files, setFiles] = useState([]);
 
   const handleFileChange = (e) => {
-    setFile(e.target.files[0]);
+    const selectedFiles = Array.from(e.target.files);
+    if (selectedFiles.length > 5) {
+      alert('You can only upload up to 5 files');
+      return;
+    }
+    setFiles(selectedFiles);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!file) {
-      alert("Please upload a file first!");
+    if (files.length === 0) {
+      alert('Please upload at least one file');
       return;
     }
 
     const formData = new FormData();
-    formData.append('file', file);
+    files.forEach((file, index) => {
+      formData.append(`file${index}`, file);
+    });
 
-    // Soumission vers le backend
+    // Submit to the backend
     const response = await fetch('http://localhost:5001/upload', {
       method: 'POST',
       body: formData
@@ -31,9 +36,9 @@ function FileUpload() {
 
   return (
     <div>
-      <h2>Upload a PDF Document</h2>
+      <h2>Upload PDF Documents</h2>
       <form onSubmit={handleSubmit}>
-        <input type="file" accept=".pdf" onChange={handleFileChange} />
+        <input type="file" accept=".pdf" multiple onChange={handleFileChange} />
         <button type="submit">Submit</button>
       </form>
     </div>
