@@ -1,3 +1,5 @@
+require('dotenv').config();  // Charger les variables d'environnement depuis .env
+
 const express = require('express');
 const cors = require('cors');
 const multer = require('multer');
@@ -9,16 +11,18 @@ const app = express();
 app.use(cors());
 const upload = multer({ dest: 'uploads/' });
 
+// Charger les variables d'environnement
+const pinataApiKey = process.env.PINATA_API_KEY;
+const pinataSecretApiKey = process.env.PINATA_SECRET_API_KEY;
+const privateKey = process.env.PRIVATE_KEY;  // Clé privée pour signer les transactions
+const contractAddress = process.env.CONTRACT_ADDRESS;  // Adresse du contrat déployé
+
 // Configuration d'Ethers.js pour Avalanche Fuji
 const provider = new ethers.providers.JsonRpcProvider('https://api.avax-test.network/ext/bc/C/rpc');
-const privateKey = 'YOUR_PRIVATE_KEY';  // Remplace par ta clé privée (idéalement à stocker dans un .env)
 const wallet = new ethers.Wallet(privateKey, provider);
 
-// Adresse du contrat déployé sur Fuji
-const contractAddress = '0xYourContractAddress';
 const contractABI = [
   // ABI de ton contrat déployé
-  // Par exemple, tu peux l'exporter depuis Remix après le déploiement
 ];
 
 // Instance du contrat
