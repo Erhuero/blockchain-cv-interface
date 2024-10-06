@@ -1,0 +1,77 @@
+.AuthPage {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 50px auto;
+  }
+  
+  .AuthPage h2 {
+    color: #333;
+    margin-bottom: 40px;
+  }
+  
+  .AuthPage ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+  
+  .AuthPage li {
+    margin: 10px 0;
+  }
+  
+  .AuthPage button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 15px 30px; /* Increase padding for bigger buttons */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%; /* Make buttons equal width */
+    max-width: 300px; /* Optional: limit the maximum width */
+    font-size: 1.2em; /* Increase font size */
+  }
+  
+  .AuthPage button:hover {
+    background-color: #0056b3;
+  }
+  
+  .AuthPage form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .AuthPage input {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 300px;
+  }
+  
+  .AuthPage .submit-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 15px 30px; /* Increase padding for bigger button */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1.2em; /* Increase font size */
+    margin-top: 25px; /* Add some top margin */
+  }
+  
+  .AuthPage .submit-button:hover {
+    background-color: #218838;
+  }
+  
+  .AuthPage .logo {
+    width: 100px;
+    margin-bottom: 20px;
+  }

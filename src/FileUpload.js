@@ -1,40 +1,57 @@
 import React, { useState } from 'react';
+import DragAndDrop from './components/DragAndDrop';
+import './FileUpload.css';
 
 function FileUpload() {
-  console.log("FileUpload component is rendering");  // Log pour déboguer
+  const [files, setFiles] = useState([]);
+  const [uploadProgress, setUploadProgress] = useState({});
 
-  const [file, setFile] = useState(null);
-
-  const handleFileChange = (e) => {
-    setFile(e.target.files[0]);
+  const handleFilesAdded = (newFiles) => {
+    setFiles(newFiles);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!file) {
-      alert("Please upload a file first!");
+    if (files.length === 0) {
+      alert('Please upload at least one file');
       return;
     }
 
     const formData = new FormData();
-    formData.append('file', file);
-
-    // Soumission vers le backend
-    const response = await fetch('http://localhost:5001/upload', {
-      method: 'POST',
-      body: formData
+    files.forEach((file, index) => {
+      formData.append(`file${index}`, file);
     });
 
-    const result = await response.json();
-    alert(result.message);
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', 'http://localhost:5001/upload');
+
+    xhr.upload.onprogress = (event) => {
+      if (event.lengthComputable) {
+        const copy = { ...uploadProgress };
+        files.forEach(file => {
+          copy[file.name] = (event.loaded / event.total) * 100;
+        });
+        setUploadProgress(copy);
+      }
+    };
+
+    xhr.onload = () => {
+      if (xhr.status === 200) {
+        alert('Files uploaded successfully');
+      } else {
+        alert('Failed to upload files');
+      }
+    };
+
+    xhr.send(formData);
   };
 
   return (
-    <div>
-      <h2>Upload a PDF Document</h2>
+    <div className="file-upload">
+      <h2>Upload PDF of your Certificate</h2>
+      <DragAndDrop onFilesAdded={handleFilesAdded} uploadProgress={uploadProgress} />
       <form onSubmit={handleSubmit}>
-        <input type="file" accept=".pdf" onChange={handleFileChange} />
-        <button type="submit">Submit</button>
+        {/* <button type="submit">Submit</button> */}
       </form>
     </div>
   );
