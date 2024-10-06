@@ -48,7 +48,7 @@ function FileUpload() {
 
   return (
     <div className="file-upload">
-      <h2>Upload your PDF ocuments</h2>
+      <h2>Upload PDF of your Certificate</h2>
       <DragAndDrop onFilesAdded={handleFilesAdded} uploadProgress={uploadProgress} />
       <form onSubmit={handleSubmit}>
         {/* <button type="submit">Submit</button> */}
