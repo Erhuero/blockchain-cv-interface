@@ -38,7 +38,7 @@ const DragAndDrop = ({ onFilesAdded }) => {
   return (
     <div className="dropzone-container">
       <div className="instructions">
-        <p>Drag 'n' drop some files here, or click to select files (PDF only, max 5 files, max 100 MB each)</p>
+        <p>PDF only, max 5 files, max 100 MB each</p>
       </div>
       <div {...getRootProps({ className: 'dropzone' })}>
         <input {...getInputProps()} />

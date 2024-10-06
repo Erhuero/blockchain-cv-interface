@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import FileUpload from '../FileUpload';
 import './FormPage.css';
 
+
 // Utility function to generate a random hash code
 const generateRandomHash = () => {
-  return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
-};
+    return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+  };
 
 function FormPage() {
   const [id1, setId1] = useState('');
@@ -13,6 +14,7 @@ function FormPage() {
   const [hashCode, setHashCode] = useState('');
   const [files, setFiles] = useState([]);
   const [uploadProgress, setUploadProgress] = useState({});
+  const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
     setHashCode(generateRandomHash());
@@ -49,7 +51,7 @@ function FormPage() {
 
     xhr.onload = () => {
       if (xhr.status === 200) {
-        alert('Files uploaded successfully');
+        setSubmitted(true);
       } else {
         alert('Failed to upload files');
       }
@@ -60,25 +62,48 @@ function FormPage() {
 
   return (
     <div className="FormPage">
-      <h1>Welcome Nelly Pringent</h1>
-      <h3>Your profile ID: {hashCode}</h3>
-      <h2>Enter IDs and Upload Files</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={id1}
-          onChange={(e) => setId1(e.target.value)}
-          placeholder="Enter ID 1"
-        />
-        <input
-          type="text"
-          value={id2}
-          onChange={(e) => setId2(e.target.value)}
-          placeholder="Enter ID 2"
-        />
-        <FileUpload onFilesAdded={handleFilesAdded} uploadProgress={uploadProgress} />
-        <button type="submit" className="submit-button">Create NFT</button>
-      </form>
+      {submitted ? (
+        <div className="success-message">
+          <h1>NFT Created Successfully</h1>
+          <p>These files:</p>
+          <ul>
+            {files.map(file => (
+              <li key={file.name}>{file.name} ({(file.size / 1024 / 1024).toFixed(2)} MB)</li>
+            ))}
+          </ul>
+          <p>With these IDs:</p>
+          <ul>
+            <li>ID 1: {id1}</li>
+            <li>ID 2: {id2}</li>
+          </ul>
+          <p>Hash: {hashCode}</p>
+          <p>A signing request has been sent by email to the institute.</p>
+        </div>
+      ) : (
+        <>
+          <h1>Welcome Nelly Pringent</h1>
+          <h3>Your ID: {hashCode}</h3>
+          
+          <form onSubmit={handleSubmit}>
+          <h2>Issuing Institute Identifier</h2>
+            <input
+              type="text"
+              value={id1}
+              onChange={(e) => setId1(e.target.value)}
+              placeholder="Enter the ID"
+            />
+            <h2>Certificate Identifier</h2>
+            <input
+              type="text"
+              value={id2}
+              onChange={(e) => setId2(e.target.value)}
+              placeholder="Enter the ID"
+            />
+            <FileUpload onFilesAdded={handleFilesAdded} uploadProgress={uploadProgress} />
+            <button type="submit" className="submit-button">Create NFT Certificate</button>
+          </form>
+        </>
+      )}
     </div>
   );
 }
