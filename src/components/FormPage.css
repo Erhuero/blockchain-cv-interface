@@ -1,0 +1,43 @@
+.FormPage {
+  text-align: center;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 50px auto;
+}
+
+.FormPage h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.FormPage form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.FormPage input {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 80%;
+  max-width: 300px;
+}
+
+.FormPage .submit-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.FormPage .submit-button:hover {
+  background-color: #218838;
+}

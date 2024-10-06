@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import FileUpload from '../FileUpload';
+import './FormPage.css';
 
 function FormPage() {
   const [id1, setId1] = useState('');
@@ -28,7 +29,7 @@ function FormPage() {
           placeholder="Enter ID 2"
         />
         <FileUpload />
-        <button type="submit">Create NFT</button>
+        <button type="submit" className="submit-button">Create NFT</button>
       </form>
     </div>
   );

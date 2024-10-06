@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './AuthPage.css';
+import logo from '../media/image.png'; // Add your logo image here
 
 function AuthPage() {
   const [authMethod, setAuthMethod] = useState('');
@@ -23,8 +25,9 @@ function AuthPage() {
 
   return (
     <div className="AuthPage">
+      <img src={logo} alt="Logo" className="logo" />
       <h2>Choose Authentication Method</h2>
-      <ul style={{ listStyleType: 'none', padding: 0 }}>
+      <ul>
         <li>
           <button onClick={() => setAuthMethod('passkey')}>Passkey</button>
         </li>
@@ -61,7 +64,7 @@ function AuthPage() {
             placeholder="Enter authenticator code"
           />
         )}
-        <button type="submit">Submit</button>
+        <button type="submit" className="submit-button">Submit</button>
       </form>
     </div>
   );
