@@ -8,6 +8,16 @@
   margin: 50px auto;
 }
 
+.FormPage h1 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.FormPage h3 {
+  color: #666;
+  margin-bottom: 20px;
+}
+
 .FormPage h2 {
   color: #333;
   margin-bottom: 20px;

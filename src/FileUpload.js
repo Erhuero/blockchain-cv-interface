@@ -1,46 +1,21 @@
 import React, { useState } from 'react';
+import DragAndDrop from './components/DragAndDrop';
+import './FileUpload.css';
 
-function FileUpload() {
+function FileUpload({ onFilesAdded, onSubmit }) {
   const [files, setFiles] = useState([]);
+  const [uploadProgress, setUploadProgress] = useState({});
 
-  const handleFileChange = (e) => {
-    const selectedFiles = Array.from(e.target.files);
-    if (selectedFiles.length > 5) {
-      alert('You can only upload up to 5 files');
-      return;
-    }
-    setFiles(selectedFiles);
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (files.length === 0) {
-      alert('Please upload at least one file');
-      return;
-    }
-
-    const formData = new FormData();
-    files.forEach((file, index) => {
-      formData.append(`file${index}`, file);
-    });
-
-    // Submit to the backend
-    const response = await fetch('http://localhost:5001/upload', {
-      method: 'POST',
-      body: formData
-    });
-
-    const result = await response.json();
-    alert(result.message);
+  const handleFilesAdded = (newFiles) => {
+    setFiles(newFiles);
+    onFilesAdded(newFiles);
   };
 
   return (
-    <div>
+    <div className="file-upload">
       <h2>Upload PDF Documents</h2>
-      <form onSubmit={handleSubmit}>
-        <input type="file" accept=".pdf" multiple onChange={handleFileChange} />
-        <button type="submit">Submit</button>
-      </form>
+      <DragAndDrop onFilesAdded={handleFilesAdded} uploadProgress={uploadProgress} />
+      <button type="button" onClick={onSubmit}>Submit</button>
     </div>
   );
 }

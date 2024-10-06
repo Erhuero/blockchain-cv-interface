@@ -1,0 +1,27 @@
+.file-upload {
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.file-upload h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.file-upload form {
+  margin-top: 20px;
+}
+
+.file-upload button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.file-upload button:hover {
+  background-color: #218838;
+}
