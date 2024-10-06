@@ -1,56 +1,40 @@
 .file-upload {
-  text-align: center;
-  font-family: 'Ubuntu', sans-serif;
-}
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+  }
+  
+  .file-upload h2 {
+    color: #ff4d00;
+    margin-bottom: 20px;
+  }
 
-.file-upload h2 {
-  color: #333;
-  margin-bottom: 20px;
-}
-
-.create-nft {
-  font-size: 5em; /* Increase font size for "Create NFT" */
-}
-
-.file-upload form {
-  margin-top: 20px;
-}
-
-.file-upload button {
-  background-color: #28a745;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.file-upload button:hover {
-  background-color: #218838;
-}
-
-.file-list {
-  margin-top: 20px;
-}
-
-.file-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 10px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #fff;
-}
-
-.delete-button {
-  background-color: red !important;
-  border: none;
-  color: white;
-  cursor: pointer;
-  font-size: 1.2em;
-  padding: 5px;
-  border-radius: 5px;
-}
+  .hidden {
+    display: none;
+  }
+  
+  .create-nft {
+    font-size: 5em;
+    color: #ff4d00;
+  }
+  
+  .file-upload form {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espace entre les boutons */
+  }
+  
+  .file-upload button {
+    background-color: #ff4d00;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .file-upload button:hover {
+    background-color: #c0f8ff;
+    color: #ff4d00;
+  }

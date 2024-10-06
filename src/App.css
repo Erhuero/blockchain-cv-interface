@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-color: #f4f4f9;
+  background: linear-gradient(#ff4d00, #c0f8ff);
 }
 
 .App-logo {
@@ -20,7 +20,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #ff4d00;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -31,7 +31,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #c0f8ff;
 }
 
 @keyframes App-logo-spin {

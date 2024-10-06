@@ -9,66 +9,66 @@
   }
   
   .AuthPage h2 {
-    color: #333;
+    color: #ff4d00;
     margin-bottom: 40px;
   }
-  
+
   .AuthPage ul {
-    list-style-type: none;
+    list-style-type: none; /* Remove bullet points */
     padding: 0;
-    margin-bottom: 20px;
-  }
-  
-  .AuthPage li {
-    margin: 10px 0;
   }
   
   .AuthPage button {
-    background-color: #007bff;
+    background-color: #ff4d00;
     color: white;
     border: none;
-    padding: 15px 30px; /* Increase padding for bigger buttons */
+    padding: 15px 30px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
-    width: 100%; /* Make buttons equal width */
-    max-width: 300px; /* Optional: limit the maximum width */
-    font-size: 1.2em; /* Increase font size */
+    font-size: 1.2em;
+    margin-top: 25px;
+    width: 100%; /* Ensure buttons have the same width */
+    max-width: 300px; /* Set a maximum width */
+    display: block; /* Stack buttons one above the other */
+    margin-left: auto; /* Center the buttons */
+    margin-right: auto; /* Center the buttons */
   }
   
   .AuthPage button:hover {
-    background-color: #0056b3;
-  }
-  
-  .AuthPage form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background-color: #c0f8ff;
+    color: #ff4d00;
   }
   
   .AuthPage input {
     padding: 10px;
     margin: 10px 0;
-    border: 1px solid #ccc;
+    border: 1px solid #ff4d00;
     border-radius: 5px;
     width: 80%;
     max-width: 300px;
   }
   
   .AuthPage .submit-button {
-    background-color: #28a745;
+    background-color: #ff4d00;
     color: white;
     border: none;
-    padding: 15px 30px; /* Increase padding for bigger button */
+    padding: 15px 30px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
-    font-size: 1.2em; /* Increase font size */
-    margin-top: 25px; /* Add some top margin */
+    font-size: 1.2em;
+    margin-top: 25px;
+    width: 100%; /* Ensure buttons have the same width */
+    max-width: 300px; /* Set a maximum width */
+    display: block; /* Stack buttons one above the other */
+    margin-left: auto; /* Center the buttons */
+    margin-right: auto; /* Center the buttons */
   }
   
   .AuthPage .submit-button:hover {
-    background-color: #218838;
+    background-color: #c0f8ff;
+    color: #ff4d00;
   }
   
   .AuthPage .logo {
