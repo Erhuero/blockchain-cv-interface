@@ -55,7 +55,13 @@ function FormPage() {
       {successMessageVisible ? (
         <div className="success-message">
           <h1>Success!</h1>
-          <p>Your NFT Certificate has been created successfully.</p>
+          <h2>Your NFT Certificate has been created successfully.</h2>
+          <p> </p>
+          <p>Transaction hash sur avalanche : </p>
+        <p>Your certificate was uploaded to pinata.cloud with CID</p>
+        <p>(CID = QmeaKXvbjjnttzu4ttAzjDQ2wHR97uCX84LyyAyLMtLagm) </p>
+        <p> </p>
+          <p>An email had been sent to the institute in order to sign your certificate...</p>
         </div>
       ) : null}
     </div>
